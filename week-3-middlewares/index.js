@@ -7,7 +7,7 @@ app.use(express.json());
 //   const username = req.headers.username;
 //   const password = req.headers.password;
 
-//   if(!(username === "nitin" && password === "pass")) {
+//   if(!(username === "nitin" &&  password === "pass")) {
 //     res.status(400).json({"message": "Something up with your inputs!!"});
 //     return;
 //   }
@@ -37,7 +37,7 @@ app.use(express.json());
 //   // do something with kidney here
 //   res.send("Your heart is healthy");
 // })
-// app.get("/kidney-check", userMiddleware, kidneyMiddleware, function(req, res) {
+// app.get("/kidney-check", userMiddleware, kidneyMiddlewarff e, function(req, res) {
 //   // do something with kidney here
 //   res.send("kidney is fine!")
 // })
