@@ -1,0 +1,26 @@
+import { Hono } from "hono";
+import { PrismaClient } from "@prisma/client/edge";
+import { withAccelerate } from "@prisma/extension-accelerate";
+
+const app = new Hono();
+
+app.get("/api/v1/signup", (c) => {
+  const prisma = new PrismaClient({
+    datasourceUrl: env.DATABASE_URL,
+  }).$extends(withAccelerate());
+  return c.text("Hello Hono!");
+});  
+app.post("/api/v1/signin", (c) => {
+  return c.text("Hello from signin!");
+});
+app.post("/api/v1/blog", (c) => {
+  return c.text("Hello from post blog!");
+});
+app.put("/api/v1/blog", (c) => {
+  return c.text("Hello from put blog!!");
+});
+app.get("/api/v1/blog/:id", (c) => {
+  return c.text(`Hello From blog ID id`);
+});
+
+export default app;
