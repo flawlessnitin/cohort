@@ -17,6 +17,7 @@ app.get("/api/v1/signup", (c) => {
 app.post("/api/v1/signin", (c) => {
   return c.text("Hello from signin!");
 });
+console.log('Hello World!')
 app.post("/api/v1/blog", (c) => {
   return c.text("Hello from post blog!");
 });
