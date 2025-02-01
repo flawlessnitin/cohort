@@ -46,7 +46,7 @@ app.put("/completed", async function (req, res) {
     return;
   }
   // put it in mongodb
-  const updateTodo = await todo.update(
+  const updateTodos = await todo.updateOne(
     {
       _id: req.body.id,
     },
@@ -54,7 +54,7 @@ app.put("/completed", async function (req, res) {
       completed: true,
     }
   );
-  if (!updateTodo) {
+  if (!updateTodos) {
     return res.status(400).json({
       message: "Unable to update Todo",
     });
