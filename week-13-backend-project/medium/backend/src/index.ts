@@ -4,13 +4,16 @@ import { Hono } from "hono";
 import { sign } from "hono/jwt";
 
 // Create the main Hono app
-const app = new Hono<{
+const app = new Hono<{ 
   Bindings: {
     DATABASE_URL: string;
     JWT_SECRET: string;
   };
 }>();
 
+app.get('/', async (c) => {
+  return c.text('Hello World');
+})
 app.post("/api/v1/signup", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env?.DATABASE_URL,
