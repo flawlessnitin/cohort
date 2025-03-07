@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 // Connect to MongoDB
-mongoose.connect(
-  "mongodb+srv://flawlessnitin:flawlessnitin@cluster0.ramyk.mongodb.net/flawlessnitin"
-);
+mongoose.connect(process.env.MONGODB_URL);
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
